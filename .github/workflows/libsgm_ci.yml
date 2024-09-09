@@ -19,9 +19,9 @@ jobs:
        gcov -r . --object-directory=`pwd` > gcov-report.xml
     - name: Setup python
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.8'
+        python-version: '3.8.18'
     - name: Install libSGM and dependencies
       run: |
           python -m pip install --upgrade pip
