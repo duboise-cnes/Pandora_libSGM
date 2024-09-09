@@ -28,6 +28,8 @@ jobs:
           pip list
           python -V
           pip install .[dev]
+      with:
+        python-version: '3.8'
     - name: Test with pytest
       run: |
           pytest --junitxml=pytest-report.xml --cov-config=.coveragerc --cov-report xml --cov
